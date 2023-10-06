@@ -47,30 +47,33 @@
         h2{
             text-align: center;
         }
+        #passed, #mailed{
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="loginForm">
-        <button>SignIn</button>
-        <div class="form">
+        <button id="signInBtn">SignIn</button>
+        <div class="form" id="formValue">
             <form action="#">
                 <h2>Login Form</h2>
                 <label for="Email">Email Address<span>*</span></label><br>
                 <input type="email" name="Email" id="Email" placeholder="Enter your email"><br>
-                <span>*This field is required</span><br>
+                <span id="mailed">*This field is required</span><br>
 
                 <div class="passTag">
                     <label for="pass">Password<span>*</span></label><br>
                 </div>
                 <input type="password" name="pass" id="pass" placeholder="Enter your password"><br>
-                <span>*This field is required</span><br>
+                <span id="passed">*This field is required</span><br>
 
                 <div class="rem">
                     <input type="checkbox" name="selectMe" id="selectMe">
                     <label for="selectMe">Remember me</label><br>
                 </div>
 
-                <button>Login</button>
+                <button id="loginBtn">Login</button>
             </form>
         </div>
     </div>
