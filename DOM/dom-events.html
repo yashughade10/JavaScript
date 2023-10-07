@@ -20,16 +20,41 @@
             border: 1px solid yellow;
             background-color: yellow;
         }
+        #cap1{
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+        #cap2{
+            border: 1px solid gold;
+            background-color: gold;
+        }
+        #cap3{
+            border: 1px solid white;
+            background-color: white;
+            color: black;
+        }
     </style>
 </head>
 <body>
-
+    <h2>Event Bubbling</h2>
     <div id="event1">
         EVENT-1
         <div id="event2">
             EVENT-2
             <div id="event3">
                 EVENT-3
+            </div>
+        </div>
+    </div>
+
+    <h2>Event Capturing</h2>
+    <div id="cap1">
+        EVENT-CAPTURING-1
+        <div id="cap2">
+            EVENT-CAPTURING-2
+            <div id="cap3">
+                EVENT-CAPTURING-3
             </div>
         </div>
     </div>
@@ -66,7 +91,10 @@
 
 
 
-            2] Event Capturing
+            2] Event Capturing :- 
+            -In event capturing, an event propagates from the outermost element to the target element.
+            -It is the opposite of event bubbling, where events propagate outwards from the target to the outer elements. 
+            -Capturing happens before bubbling.
         */
 
 
