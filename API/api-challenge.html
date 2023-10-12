@@ -37,11 +37,7 @@
     <script>
         let btn = document.getElementById('btn-fetch');
         let txt = document.getElementsByClassName('textStatus');
-        // let img1 = document.getElementById('imgD1')
-        // let img2 = document.getElementById('imgD2')
-        // let img3 = document.getElementById('imgD3')
         let imgArr = document.getElementsByTagName('img');
-        // let imageArray = [img1, img2, img3];
         btn.addEventListener('click', ()=>{
             for(let i in imgArr){
                 fetch('https://dog.ceo/api/breeds/image/random')
