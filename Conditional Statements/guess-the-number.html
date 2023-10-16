@@ -14,9 +14,9 @@
         while(input != a){
             score -= 1;
             input = prompt("guess the number : ")
-            if(input === a){
+            if(input == a){
                 console.log("Congratulations! You guessed the right number");
-                console.log(`You guessed the actual number in ${100-score}`);
+                console.log(`You guessed the actual number in ${100-score} tries`);
             }
             else if(input>a && input<100){
                 console.log("Your number is bigger than actual.");
