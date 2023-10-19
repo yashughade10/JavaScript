@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up form validation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin-top: -20px;
+            text-align: center;
+            width: 350px;
+            height: 250px;
+            border-radius: 20px;
+            margin-left: 360px;
+        }
+        h2{
+            margin-top: 80px;
+        }
+        input{
+            padding: 8px;
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid gray;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        p{
+            margin-top: 3px;
+            visibility: hidden;
+            color: red;
+            font-size: 10px;
+        }
+        span{
+            font-weight: 900;
+        }
+        button{
+            padding: 5px 20px;
+            border-radius: 10px;
+            border: 2px solid rgb(114, 114, 227);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup Form</h2>
+
+        <input type="text" name="username" id="username" placeholder="Enter User Name"><span id="s1"></span>
+        <p id="user">*Enter correct username</p>
+
+        <input type="email" name="email" id="email" placeholder="Enter your email"><span id="s2"></span>
+        <p id="mail">*Enter correct Email</p>
+
+        <input type="password" name="pass" id="pass" placeholder="Enter Password"><span id="s3"></span>
+        <p id="passw">*Enter correct password</p>
+
+        <input type="text" name="mob" id="mob" placeholder="Enter Telephone number"><span id="s4"></span>
+        <p id="tele">*Enter correct mobile number</p>
+
+        <button onclick="validateForm()">Submit</button>
+    </div>
+
+    <script>
+        // const btnClick = document.getElementById('btn');
+        
+        const validateForm = ()=>{
+            const userName = document.getElementById('username').value;
+            const emailId = document.getElementById('email').value;
+            const passWord = document.getElementById('pass').value;
+            const telePhone = document.getElementById('mob').value;
+            const regexUser = /^[a-z A-Z 0-9]{5,12}$/
+            const regexEmail = /^[a-z A-Z 0-9 .]+@[a-z A-Z 0-9 .]+$/;
+            const regexTel = /^[6-9]\d{9}$/;
+            const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d).{8,20}$/
+
+            if(regexUser.test(userName)) {
+                document.getElementById('username').style.borderColor="green";
+                document.getElementById('user').style.visibility="hidden"
+                document.getElementById('s1').innerHTML="&#x2713";
+                document.getElementById('s1').style.color="green";
+            }else{
+                document.getElementById('username').style.borderColor="orange";
+                document.getElementById('user').style.visibility="visible"
+                document.getElementById('s1').innerHTML="&#xd7";
+                document.getElementById('s1').style.color="red";
+            }
+            
+            if(regexEmail.test(emailId)){
+                document.getElementById('email').style.borderColor="green";
+                document.getElementById('mail').style.visibility="hidden"
+                document.getElementById('s2').innerHTML="&#x2713";
+                document.getElementById('s2').style.color="green";
+            }else{
+                document.getElementById('email').style.borderColor="orange";
+                document.getElementById('mail').style.visibility="visible"
+                document.getElementById('s2').innerHTML="&#xd7";
+                document.getElementById('s2').style.color="red";
+            }
+            
+            if(regexTel.test(telePhone)){
+                document.getElementById('mob').style.borderColor="green";
+                document.getElementById('tele').style.visibility="hidden"
+                document.getElementById('s3').innerHTML="&#x2713";
+                document.getElementById('s3').style.color="green";
+            }else{
+                document.getElementById('mob').style.borderColor="orange";
+                document.getElementById('tele').style.visibility="visible"
+                document.getElementById('s3').innerHTML="&#xd7";
+                document.getElementById('s3').style.color="red";
+            }
+            
+            if(regexPass.test(passWord)){
+                document.getElementById('pass').style.borderColor="green";
+                document.getElementById('passw').style.visibility="hidden"
+                document.getElementById('s4').innerHTML="&#x2713";
+                document.getElementById('s4').style.color="green";
+            }else{
+                document.getElementById('pass').style.borderColor="orange";
+                document.getElementById('passw').style.visibility="visible"
+                document.getElementById('s4').innerHTML="&#xd7";
+                document.getElementById('s4').style.color="red";
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>

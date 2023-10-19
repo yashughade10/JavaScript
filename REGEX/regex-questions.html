@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Coding Questions</title>
+</head>
+<body>
+    <!-- Validate Indian mobile number -->
+    <label for="mobile">Mobile : </label>
+    <input type="text" name="mobile" id="mobile" placeholder="Enter mobile number">
+    <button onclick="validateNum()">Validate</button>
+    <div id="output">
+
+    <!-- Validate PAN Card number -->
+    <label for="pan">PAN : </label>
+    <input type="text" name="pan" id="pan" placeholder="Enter PAN Card number"><span></span>
+    <button onclick="validatePAN()">Validate</button>
+    <div id="output2">
+        
+    </div>
+
+    <!-- Validate PAN Card number -->
+    <label for="adhar">Adhar : </label>
+    <input type="text" name="adhar" id="adhar" placeholder="Enter Adhar number"><span></span>
+    <button onclick="validateAdhar()">Validate</button>
+    <div id="output3">
+        
+    </div>
+    
+    <script>
+        // Validate Indian mobile number
+        const validateNum=()=>{
+            const inputNum = document.getElementById('mobile').value;
+            const mobRegex = /^[6-9]\d{9}$/
+            if(!mobRegex.test(inputNum)){
+                document.getElementById('output').innerHTML="&#xd7 Please enter valid mobile number";
+                document.getElementById('output').style.color="red";
+                document.getElementById('mobile').style.borderColor="red";
+            }
+            else{
+                document.getElementById('output').innerHTML="&#x2713 Entered mobile number is correct";
+                document.getElementById('output').style.color="green";
+                document.getElementById('mobile').style.borderColor="green";
+            }
+        }
+
+        // Validate PAN Card number
+        const validatePAN=()=>{
+            const panNum = document.getElementById('pan').value;
+            const regexPAN = /^[A-Z]{5}[0-9]{4}[A-Z]$/
+            if(!regexPAN.test(panNum)){
+                // document.getElementById('output2').innerHTML="&#xd7 Incorrect";
+                document.getElementsByTagName('span')[0].innerHTML="&#xd7";
+                document.getElementById('output2').style.color="red";
+                document.getElementById('pan').style.borderColor="red";
+            }
+            else{
+                // document.getElementById('output2').innerHTML="&#x2713 Verified";
+                document.getElementsByTagName('span')[0].innerHTML="&#x2713";
+                document.getElementById('output2').style.color="green";
+                document.getElementById('pan').style.borderColor="green";
+            }
+        }
+
+        // Validate Adhar Card number
+        const validateAdhar=()=>{
+            const adharNum = document.getElementById('adhar').value;
+            const regexAdhar = /\d{12}$/
+            const reg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,15}$/;
+            if(!reg.test(adharNum)){
+                // document.getElementById('output2').innerHTML="&#xd7 Incorrect";
+                document.getElementsByTagName('span')[1].innerHTML="&#xd7";
+                document.getElementsByTagName('span')[1].style.color="red";
+                // document.getElementById('output3').style.color="red";
+                document.getElementById('adhar').style.borderColor="red";
+            }
+            else{
+                // document.getElementById('output2').innerHTML="&#x2713 Verified";
+                document.getElementsByTagName('span')[1].innerHTML="&#x2713";
+                document.getElementsByTagName('span')[1].style.color="green";
+                document.getElementById('output3').style.color="green";
+                document.getElementById('adhar').style.borderColor="green";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
