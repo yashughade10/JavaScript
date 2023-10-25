@@ -132,27 +132,42 @@
                 confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
             }
             submit() {
-                confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
+                alert(`${this.name}! Your ticket booked confirm for journey started from ${this.origin} to ${this.destination} on ${this.date} for ${this.classes}.`)
             }
             cancel() {
-                confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
+                confirm(`${this.name}! Would you like to cancel the ticket for journey started from ${this.origin} to ${this.destination} on ${this.date} .`)
             }
 
         }
         // "KSR Bengaluru", "Nagpur(NGP)", "15/10/2023", "3AC", 
-
-        const origin = document.getElementById('origin').value;
-        const destination = document.getElementById('destination').value;
-        const date = document.getElementById('date').value;
-        const classes = document.getElementById('classes').value;
-        const name = document.getElementById('name').value;
-        let yash = new ticketBooking(origin, destination, date, classes, name);
-
+        
+        
         const previewForm = () => {
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const classes = document.getElementById('classes').value;
+            const name = document.getElementById('name').value;
+            const yash = new ticketBooking(origin, destination, date, classes, name);
             yash.preview();
         }
         const submitForm = () => {
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const classes = document.getElementById('classes').value;
+            const name = document.getElementById('name').value;
+            const yash = new ticketBooking(origin, destination, date, classes, name);
             yash.submit();
+        }
+        const cancelForm = () => {
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const classes = document.getElementById('classes').value;
+            const name = document.getElementById('name').value;
+            const yash = new ticketBooking(origin, destination, date, classes, name);
+            yash.cancel();
         }
 
     </script>
