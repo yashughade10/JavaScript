@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise - Guess the number</title>
+  <title>GuessThe Number</title>
 </head>
 <body>
-    <script>
-        let a = Math.floor(Math.random()*100);
-        let input;
-        let score=100;
+  <h1>GuessThe Number</h1>
+  <p>Between 1 to 20:</p>
+  <input type="number" id="userGuess" min="1" max="20">
+  <button id="checkButton">Check</button>
+  <p id="message"></p>
+  <p id="score">Score: 0</p>
 
-        while(input != a){
-            score -= 1;
-            input = prompt("guess the number : ")
-            if(input == a){
-                console.log("Congratulations! You guessed the right number");
-                console.log(`You guessed the actual number in ${100-score} tries`);
-            }
-            else if(input>a && input<100){
-                console.log("Your number is bigger than actual.");
-            }
-            else if(input<a && input<100){
-                console.log("Your number is smaller than actual.");
-            }
-            else{
-                console.log("Enter number between 1 to 100");
-            }
-        }
-    </script>
+  <script>
+    let targetNumber = Math.floor(Math.random() * 20) + 1;
+    let score = 20;
+
+    const checkButton = document.getElementById("checkButton");
+    const messageElement = document.getElementById("message");
+    const scoreElement = document.getElementById("score");
+    
+    checkButton.addEventListener("click", function() {
+        const userGuessInput = document.getElementById("userGuess").value;
+
+      if (userGuessInput === targetNumber) {
+        score -= 1;
+        messageElement.textContent = "Congratulations! You guessed correctly.";
+        scoreElement.textContent = "Score: " + score + "/20";
+        targetNumber = Math.floor(Math.random() * 20) + 1;
+      } else if (userGuessInput < targetNumber) {
+        messageElement.textContent = "Your number is too small.";
+        score -= 1;
+        scoreElement.textContent = "Score: " + score + "/20";
+      } else if (userGuessInput > targetNumber) {
+        messageElement.textContent = "Your number is too large.";
+        score -= 1;
+        scoreElement.textContent = "Score: " + score + "/20";
+      }
+    });
+  </script>
 </body>
 </html>
