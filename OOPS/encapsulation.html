@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC</title>
+    <style>
+        main {
+            width: 580px;
+            background-color: gray;
+            padding: 100px 50px;
+            margin-left: 420px;
+        }
+
+        input {
+            margin-bottom: 40px;
+            margin-right: 15px;
+            padding: 10px 50px 10px 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #leb1 {
+            position: relative;
+            left: 45px;
+            top: -30px;
+        }
+
+        #leb2 {
+            position: relative;
+            left: 25px;
+            top: -30px;
+        }
+
+        #leb3 {
+            position: relative;
+            left: 35px;
+            top: -30px;
+        }
+
+        #date {
+            width: 165px;
+        }
+
+        #leb4 {
+            position: relative;
+            left: 35px;
+            top: -30px;
+        }
+
+        #classes {
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: -18px;
+            width: 225px;
+        }
+
+        .row2 {
+            margin-left: 5px;
+        }
+
+        #name {
+            width: 440px;
+        }
+
+        button {
+            padding: 10px 20px;
+            text-align: center;
+            margin-left: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 15px;
+        }
+        .btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="row1">
+            <label for="origin" id="leb1">From</label>
+            <input type="text" name="origin" id="origin" placeholder="origin">
+
+            <span>&#x21c4</span>
+
+            <label for="destination" id="leb2">To</label>
+            <input type="text" name="destination" id="destination" placeholder="destination">
+        </div>
+        <div class="row2">
+            <label for="date" id="leb3">Date</label>
+            <input type="date" name="date" id="date">
+
+            <label for="classes" id="leb4">Classes</label>
+            <select name="classes" id="classes">
+                <option value="All Classes">All Classes</option>
+                <option value="Anubhuti Class (EA)">Anubhuti Class (EA)</option>
+                <option value="AC First Class (1A)">AC First Class (1A)</option>
+                <option value="AC 2 Tier (2A)">AC 2 Tier (2A)</option>
+                <option value="AC 3 Tier (3A)">AC 3 Tier (3A)</option>
+                <option value="First Class (FA)">First Class (FA)</option>
+            </select>
+        </div>
+        <div class="row3">
+            <label for="name" id="leb1">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name">
+        </div>
+        <div class="btns">
+            <button onclick="previewForm()">Preview</button>
+            <button onclick="submitForm()">Submit</button>
+            <button onclick="cancelForm()">Cancel</button>
+        </div>
+    </main>
+
+    <script>
+        class ticketBooking {
+            constructor(origin, destination, date, classes, name) {
+                this.origin = origin;
+                this.destination = destination;
+                this.date = date;
+                this.classes = classes;
+                this.name = name;
+            }
+
+            preview() {
+                confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
+            }
+            submit() {
+                confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
+            }
+            cancel() {
+                confirm(`${this.name}! Your journey started from ${this.origin} to ${this.destination} on ${this.date} and would you like to book ticket for ${this.classes}.`)
+            }
+
+        }
+        // "KSR Bengaluru", "Nagpur(NGP)", "15/10/2023", "3AC", 
+
+        const origin = document.getElementById('origin').value;
+        const destination = document.getElementById('destination').value;
+        const date = document.getElementById('date').value;
+        const classes = document.getElementById('classes').value;
+        const name = document.getElementById('name').value;
+        let yash = new ticketBooking(origin, destination, date, classes, name);
+
+        const previewForm = () => {
+            yash.preview();
+        }
+        const submitForm = () => {
+            yash.submit();
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance and Polymorphism</title>
+</head>
+<body>
+    <script>
+        // Inheritance
+        class oldTester{
+            constructor(name){
+                this.name=name;
+            }
+            teach(){
+                console.log(this.name + "is the teacher of testing");
+            }
+            testing(){
+                console.log(this.name + " is the testing trainer");
+            }
+        }
+
+        class newTester extends oldTester{
+            teach(){
+                console.log(this.name + "is the new teacher of testing");
+            }
+            testing(){
+                console.log(this.name + " is the new testing trainer");
+            }
+        }
+
+        const a = new oldTester("Yashwant");
+        a.testing();
+        
+        const b = new newTester("Yash");
+        b.testing();
+
+
+        // Polymorphism
+        // Method Overriding
+        class Animal{
+            constructor(name, sound){
+                this.name=name;
+                this.sound=sound;
+            }
+            speak(){
+                console.log(`The animal makes a noise`);
+            }
+        }
+
+        class Monkey extends Animal{
+            speak(){
+                console.log("Monkey makes a noise");
+            }
+        }
+
+        class Dog extends Animal{
+            speak(){
+                console.log("The Dog Barks");
+            }
+        }
+
+        class cat extends Animal{
+            speak(){
+                console.log("The cat meow");
+            }
+        }
+
+        const A = new Animal();
+        A.speak();
+        const m = new Monkey();
+        m.speak();
+        const d = new Dog();
+        d.speak();
+        const c = new cat();
+        c.speak();
+
+        // Method Overloading
+        class Calculator{
+            add(){
+                if(arguments.length===2){
+                    console.log(arguments[0]+arguments[1]);
+                }
+                else if(arguments.length===3){
+                    console.log(arguments[0]+arguments[1]+arguments[2]);
+                }
+                else{
+                    console.log("Invalid arguments");
+                }
+            }
+        }
+        class newCalc extends Calculator{
+            add(a,b,c){
+                console.log(a+b+c);
+            }
+        }
+
+        const calc = new Calculator(1,2,3);
+        calc.add(2,3);
+        calc.add(2,3,7);
+
+        const calc2 = new newCalc();
+        calc2.add(2,3,4);
+    </script>
+</body>
+</html>
