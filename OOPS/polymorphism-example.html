@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            login(){
+                console.log("Employee Logged-in Successfully");
+            }
+            logout(){
+                console.log("Employee Logged-out Successfully");
+            }
+            requestLeave(leave){
+                console.log(`Employee has requested ${leave} leaves - auto upgraded`);
+            }
+        }
+        
+        class Programmer extends Employee{
+            requestLeave(leave){
+                super.requestLeave(leave)
+                console.log(`and one extra is leave is granted`);
+            }
+        }
+        
+        class Tester extends Employee{
+            requestLeave(leave){
+                super.requestLeave(leave);
+                console.log(`one half-day leave is granted`);
+            }
+        }
+
+        const p1 = new Programmer();
+        p1.login();
+        p1.logout();
+        p1.requestLeave(1);
+
+        const t1 = new Tester();
+        t1.requestLeave(3)
+    </script>
+</body>
+</html>
