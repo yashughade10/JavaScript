@@ -1,0 +1,15 @@
+#loader {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid grey;
+    border-top: 3px solid black;
+    animation: loadAnimation 1s infinite;
+    visibility: hidden;
+}
+
+@keyframes loadAnimation {
+    100% {
+        rotate: 360deg;
+    }
+}
