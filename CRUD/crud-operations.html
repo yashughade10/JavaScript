@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        CRUD :- Create Read Update Delete
+     -->
+
+    <script>
+        let items = [
+            { id: 1, name: "Item1"},
+            { id: 2, name: "Item2"},
+            { id: 3, name: "Item3"},
+            { id: 4, name: "Item4"}
+        ]
+
+        // Read all items
+        const readItems=()=>{
+            return items;
+        }        
+        // let newItems = readItems();
+        console.log(readItems());
+
+        // Read specific item by id value
+        const readItemById=(value)=>{
+            return items.find(item => item.name===value);
+        }
+        console.log(readItemById("Item2"));
+
+
+        // Create (add an Item)
+        const createItem=(newItem)=>{
+            items.push(newItem)
+        }
+        createItem({id:5, name:"Item5"});
+        console.log(readItems());
+        
+        
+        // Update
+
+        const updateItem=(idVal, updatedItem)=>{
+            let indx = items.findIndex(newI => newI.id==idVal);
+            console.log(indx);
+            if(indx!=-1){
+                items[indx]={...items[indx], ...updatedItem}
+            }
+        }
+        
+        updateItem(4, {name:"updated item4"});
+        console.log(readItems());
+        
+        // Delete
+        function deleteItem(idV){
+            items = items.filter(item => item.id!==idV)
+        }
+        deleteItem(2);
+        
+
+
+    </script>
+</body>
+
+</html>
