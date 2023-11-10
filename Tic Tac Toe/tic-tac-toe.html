@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- 
+        "Tic Tac Toe Xperts"
+        "Toe-tally Awesome Tic Tac Toe"
+        "Tic Tac Toe Triad"
+        "Xs and Os Showdown"
+        "Three in a Row Rumble"
+        "Tic Tac Triumph"
+        "Board Battle: Tic Tac Toe"
+        "X Marks the Spot"
+        "Toe Jam"
+        "Tic Tac Throwdown"
+     -->
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="nav-menu">
+        <h2>X's and O's Showdown</h2>
+    </nav>
+    
+    <!-- Game Container -->
+    <section class="gameContainer">
+        <div class="container">
+            <div class="division1 bt bl">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bt">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bt br">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bl">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1">
+                <span class="boxText"></span>
+                <div class="match-line"></div>
+            </div>
+            <div class="division1 br">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bl bb">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bb">
+                <span class="boxText"></span>
+            </div>
+            <div class="division1 bb br">
+                <span class="boxText"></span>
+            </div>
+        </div>
+        <div class="gameInfo">
+            <h1>Welcome to X's and O's Showdown</h1>
+            <div class="turns">
+                <span class="info">Turn for X</span>
+                <button onclick="resetGame()" id="reset-btn">Reset</button>
+            </div>
+            <div class="imgBox">
+                <img src="./assets/excited.gif" alt="Excited Gif">
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

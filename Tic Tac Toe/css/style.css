@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: rgb(220, 49, 233);
+    color: white;
+    padding: 30px 10px;
+    font-size: 25px;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: repeat(3, 10vw);
+}
+
+.division1 {
+    border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.division1:hover {
+    background-color: rgb(248, 244, 239);
+    /* background: linear-gradient(white, rgb(248, 244, 239)); */
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.info {
+    font-size: 25px;
+}
+
+#reset-btn {
+    background-color: rgb(235, 222, 206);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 25px;
+}
+
+.imgBox img {
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.bt {
+    border-top: 0;
+}
+
+.bb {
+    border-bottom: 0;
+}
+
+.bl {
+    border-left: 0;
+}
+
+.br {
+    border-right: 0;
+}
+.match-line{
+    border: 2px solid black;
+    rotate: 45deg;
+    position: relative;
+    height: 0;
+    transition: height 1s ease-in-out;
+}
+
+
+
+@media only screen and (max-width:1400px) and (min-width:1000px) {
+    .gameContainer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+    .container {
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+    }
+    h1{
+        font-size: 50px;
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width:1000px) and (min-width:500px) {
+    .gameContainer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+    .container {
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+    }
+    h1{
+        font-size: 30px;
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width:500px) {
+    .gameContainer{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+    .container {
+        grid-template-columns: repeat(3, 25vw);
+        grid-template-rows: repeat(3, 25vw);
+    }
+    h1{
+        font-size: 25px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+}
