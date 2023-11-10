@@ -86,7 +86,7 @@
 
         // Recursive Function :- It is a function who call itself unless it hit the base condition/case.
         function recursiveFunc(n) {
-            if (n === 0 || n===1) {
+            if (n === 0 || n === 1) {
                 return 1;
             }
             return n * recursiveFunc(n - 1);
@@ -96,19 +96,21 @@
         console.log(recursiveFunc(10));
 
         // IIFE (Immediately Invoked Function Expression) :- 
-        (function fun(x,y){
-            console.log("This is printed ") 
-            console.log(x*y);
-        })(5,6);
+        (function fun(x, y) {
+            console.log("This is printed ")
+            console.log(x * y);
+        })(5, 6);
 
         // Arrow Function :- Arrow functions were introduced in ES6. Arrow functions allow us to write shorter function syntax:
-        const arrowFunc=(a,b)=>{
-            return a+b;
+        const arrowFunc = (a, b) => {
+            return a + b;
         }
 
-        console.log(arrowFunc(3,9));
-        
+        console.log(arrowFunc(3, 9));
 
+
+        const curryUnaryFunction = (a) => (b) => (c) => a + b + c;
+        console.log(curryUnaryFunction(1)(2)(5));
 
 
 
