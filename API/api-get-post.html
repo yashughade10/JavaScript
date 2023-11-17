@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API get and post method</title>
+</head>
+
+<body>
+    <script>
+        // Get method:
+        // fetch('https://jsonplaceholder.typicode.com/posts')
+        // .then(resp => resp.json())
+        // .then(get => console.log(get))
+        // .catch(error => console.log(error))
+
+        // Post method
+        const newPost = {
+            title: "New Post",
+            body: "This is body of Yashwant 101st post",
+            userId: 11,
+            id: 101
+        }
+        const newPost2 = {
+            postId: 1,
+            id: 1,
+            name:"yash",
+            email:"yash@q123gmail.com",
+            body:"yashwant ughade"
+        }
+        fetch("https://jsonplaceholder.typicode.com/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(newPost)
+        })
+            .then(resp => resp.json())
+            .then(post => console.log(post))
+            .catch(error => console.log(error))
+
+
+        fetch("https://jsonplaceholder.typicode.com/comments", {
+            method: "POST",
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(newPost2)
+        })
+            .then(resp => resp.json())
+            .then(post => console.log(post))
+            .catch(error => console.log(error))
+    </script>
+</body>
+
+</html>
