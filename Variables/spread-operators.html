@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+    <!-- 
+        Spread Operator
+        - copy
+        - combine
+        - spread
+     -->
+
+     <script>
+
+        // Copy Array
+        const num = [1,2,3,4,5];
+        // const copiedNum = num;
+        const copiedNum = [...num]
+        console.log(copiedNum==num);
+
+        // Copy Object
+        const obj = {
+            name:"yash",
+            age:22
+        }
+        const newObj = {...obj};
+        // const newObj = obj;
+        console.log(newObj==obj);
+        console.log(newObj);
+
+
+        // Combine
+        const arr1 = [1,2,3,4];
+        const arr2 = [5,6,7,8];
+        const combinedArr = [...arr1, ...arr2]
+        console.log(combinedArr);
+
+
+        // Updation in Objects
+        const updatedObj = {...obj, age:24, city:"Nagpur"}
+        console.log(updatedObj);
+
+
+        // Spread Operators with function arguments
+        const func=(a,b,c)=>{
+            return a*b*c;
+        }
+        let argArray = [2,3,5];
+        console.log(func(...argArray));
+
+     </script>
+</body>
+</html>
