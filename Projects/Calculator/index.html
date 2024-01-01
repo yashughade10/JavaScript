@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile Style Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: black;
+        }
+
+        .calculator input {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid rgb(31, 30, 30);
+            outline: none;
+            background-color: black;
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .calculator button {
+            width: 70px;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: rgb(30, 28, 28);
+            color: #ccc;
+        }
+
+        .calculator button:hover {
+            background-color: rgb(49, 47, 47);
+        }
+
+        .equal {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .calculator {
+                padding: 15px;
+            }
+            .calculator button {
+                width: 60px;
+                height: 50px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator {
+                padding: 10px;
+            }
+            .calculator input {
+                padding: 10px;
+                font-size: 16px;
+            }
+            .calculator button {
+                width: 50px;
+                height: 45px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="result" placeholder="0" readonly>
+        <div class="row">
+            <button onclick="clearInput()">C</button>
+            <button onclick="findModulous()">%</button>
+            <button onclick="backSpace()">⌫</button>
+            <button onclick="appendValue('/')">/</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('*')">x</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('-')">-</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('+')">+</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('00')">00</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+        </div>
+
+    </div>
+
+    <script>
+        function appendValue(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearInput() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculate() {
+            let expression = document.getElementById('result').value;
+            try {
+                let result = eval(expression)
+                document.getElementById('result').value = result;
+                console.log(result);
+            } catch (error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+
+        function backSpace() {
+            let result = document.getElementById('result').value;
+            document.getElementById('result').value = result.slice(0, -1);
+        }
+    </script>
+
+</body>
+
+</html>
