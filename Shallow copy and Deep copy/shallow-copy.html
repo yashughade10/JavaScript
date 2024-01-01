@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shallow Copy</title>
 </head>
+
 <body>
     <script>
 
         // Shallow Copy with the Array
-        let arr = [1,2,[3,4]]
+        let arr = [1, 2, [3, 4]]
         let shallowCopy = [...arr];
 
         console.log(arr);
@@ -18,26 +20,27 @@
         // Modify in shallow copy of Array
         shallowCopy[2][0] = "changed"
 
-        console.log(arr);
-        console.log(shallowCopy);
+        console.log(arr);           // [1,2,['changed', 4]]
+        console.log(shallowCopy);   // [1,2,['changed', 4]]
 
 
 
         // Shallow Copy with the Object
         let original = {
-            name : "yash",
-            details : {
-                age : 22
+            name: "yash",
+            details: {
+                age: 22
             }
         }
-        let newShallowCopy = {...original}
+        let newShallowCopy = { ...original }
 
         // Modify in Shallow copy of Object
         newShallowCopy.details.age = 25;
 
-        console.log(original);
-        console.log(newShallowCopy);
+        console.log(original);          // {name:"yash", details:{age:25}}
+        console.log(newShallowCopy);    // {name:"yash", details:{age:25}}
 
     </script>
 </body>
+
 </html>

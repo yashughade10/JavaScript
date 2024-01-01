@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Copy</title>
+</head>
+
+<body>
+    <script>
+
+        // deep copy with array
+        function deepCopy(arr) {
+            return arr.map(item => Array.isArray(item) ? deepCopy(item) : item)
+        }
+
+        let arr = [1, 2, [3, 4]]
+        let deepCopyArr = deepCopy(arr);
+
+        // Modify the deep copy Array
+        deepCopyArr[2][0] = "changed"
+
+        console.log(arr);           // [1,2,[3,4]]
+        console.log(deepCopyArr);   // [1,2,['changed',4]]
+
+
+        // Deep copy with Object
+        function deepCopyObj(obj) {
+            let copy = {}
+
+            for (let key in obj) {
+                if (typeof obj[key] === "object" && obj[key] !== null) {
+                    copy[key] = deepCopyObj(obj[key])
+                } else {
+                    copy[key] = obj[key]
+                }
+            }
+
+            return copy;
+        }
+
+        let originalObject = { name: 'John', details: { age: 30 } };
+        let deepCopyObject = deepCopyObj(originalObject);
+
+        deepCopyObject.details.age = 40;
+
+        console.log(originalObject);   // { name: 'John', details: { age: 30 } }
+        console.log(deepCopyObject);   // { name: 'John', details: { age: 40 } }
+    </script>
+</body>
+
+</html>
